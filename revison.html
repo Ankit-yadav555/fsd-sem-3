@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="nameInput" placeholder="enter your name">
+    <p id="greet"></p>
+    <script>
+        const input = document.getElementById("nameInput");
+        const greet = document.getElementById("greet");
+        input.addEventListener("input", () => {
+            greet.textContent = `hello, ${input.value}!`;
+        });
+    </script> 
+</body>
+</html>
+<ul id="tasklist">
+    <li>Task 1</li>
+    <li>Task 2</li> 
+</ul>
+<script>
+    const taskList = document.getElementById("tasklist");
+    const newTask = document.createElement("li");
+    newTask.textContent = "Task 3";
+    taskList.appendChild(newTask);  
+</script>
+<input type="text" id="taskInput" placeholder="enter a task">
+<button id="addTaskButton">Add Task</button>
+<ul id="taskList"></ul>
+<script>
+document.getElementById("addTaskButton").addEventListener("click", function() {
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+    const newTask = document.createElement("li");
+    newTask.textContent = taskInput.value;
+    taskList.appendChild(newTask);
+    taskInput.value = "";
+});
+
+</script>
